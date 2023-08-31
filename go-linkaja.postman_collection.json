@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "b104cee8-c0bf-48b8-842b-f2d2135378c0",
+		"name": "go-linkaja",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14545724"
+	},
+	"item": [
+		{
+			"name": "check saldo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "RAHASIA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8081/api/account/5550012",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"account",
+						"5550012"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "check saldo sukses",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "RAHASIA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8081/api/account/555001",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"account",
+								"555001"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 30 Aug 2023 14:51:28 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "107"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"status\": \"ok\",\n    \"data\": {\n        \"account_number\": 555001,\n        \"customer_name\": \"bob martin\",\n        \"balance\": 1000000\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "transfer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "RAHASIA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"to_account_number\" : 555002,\r\n \"amount\" : 2000100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/account/555001/transfer",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"account",
+						"555001",
+						"transfer"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "transfer sukses",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "RAHASIA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"to_account_number\" : 555002,\r\n \"amount\" : 2000100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/api/account/555001/transfer",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"account",
+								"555001",
+								"transfer"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 30 Aug 2023 15:43:23 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"status\": \"ok\",\n    \"data\": null\n}"
+				}
+			]
+		}
+	]
+}
